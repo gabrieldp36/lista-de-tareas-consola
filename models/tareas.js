@@ -28,12 +28,15 @@ class Tareas {
 
     };
 
-    borrarTarea(id) {
+    borrarTarea(ids) {
 
-        if (this._listado[id]) {
+        ids.forEach(id => {
 
-            delete this._listado[id];
-        };
+            if (this._listado[id]) {
+
+                delete this._listado[id];
+            };
+        })
     };
 
     crearTarea(descripcion) {

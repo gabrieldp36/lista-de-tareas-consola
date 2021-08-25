@@ -112,7 +112,8 @@ const listadoTareasBorrar = async (tareas = [] ) => {
 
         return {
             value: `${tarea.id}`,
-            name: `${index} ${tarea.descripcion}`,
+            name: (tarea.completadoEn) ? `${index} ${tarea.descripcion} ${'::'.magenta} ${'Completado.'.green}` : `${index} ${tarea.descripcion} ${'::'.magenta} ${'Pendiente.'.red}`,
+            checked: false,
         };
         
     });
@@ -120,20 +121,21 @@ const listadoTareasBorrar = async (tareas = [] ) => {
     choices.unshift({
         value: '0',
         name: `${'0.'.magenta}` + `${' Cancelar.'.magenta}`,
+        checked: false,
     });
     
     const questions = [
         {
-            type: 'list',
-            name: 'id',
+            type: 'checkbox',
+            name: 'ids',
             message: `${'Borrar'.red.underline}.`,
             choices,
         },
     ];
 
-    const {id} = await inquirer.prompt(questions);
+    const {ids} = await inquirer.prompt(questions);
 
-    return id;
+    return ids;
 
 };
 

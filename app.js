@@ -67,22 +67,38 @@ const main = async () =>{
 
             case '6':
                 
-               const id = await listadoTareasBorrar(tareas.getListadoArr);
+                const idsBorrar = await listadoTareasBorrar(tareas.getListadoArr);
 
-               if (id !== '0') {
-
+               if (idsBorrar.length === 0) {
+                   
                     console.log();
 
-                    const ok = await inquirerConfirm('¿' + 'Está Seguro'.red.underline + '?')
+                } else if ( idsBorrar.length === 1 && idsBorrar.includes('0') ) {
+                   
+                    console.log();
+
+                } else {
                     
+                   const ok = await inquirerConfirm('¿' + 'Está Seguro'.red.underline + '?');
+               
                     if (ok) {
 
-                            tareas.borrarTarea(id);
-                            console.log();
+                        tareas.borrarTarea(idsBorrar);
+                        console.log();
+
+                        if (idsBorrar.length === 1) {
+
                             console.log('   Tarea Borrada'.green + '.')
 
+                        } else if (idsBorrar.length > 1) {
+
+                            console.log('   Tareas Borradas'.green + '.')
+
+                        };
+                        
                     };
-                };
+
+                }
                 
             break;
 
