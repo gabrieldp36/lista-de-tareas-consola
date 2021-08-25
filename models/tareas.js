@@ -68,11 +68,11 @@ class Tareas {
 
             if (!tarea.completadoEn) {
 
-                listadoTareas += `\n${contador}${'.'.green} ${tarea.descripcion} ${'::'.magenta} ${'Pendiente.'.red}`;
+                listadoTareas += `\n${contador}${'.'.green} ${tarea.descripcion} ${'::'.magenta} ${'Pendiente'.red}.`;
             
             } else {
 
-                listadoTareas += `\n${contador}${'.'.green} ${tarea.descripcion} ${'::'.magenta} ${'Completado.'.green}`;
+                listadoTareas += `\n${contador}${'.'.green} ${tarea.descripcion} ${'::'.magenta} ${'Completado'.green}.`;
 
             };
 
@@ -109,7 +109,7 @@ class Tareas {
 
                 let contador = `${i + 1}.`.green;
 
-                listadoPendientes += `\n${contador} ${pendiente.descripcion} ${'::'.magenta} ${'Pendiente.'.red}`;
+                listadoPendientes += `\n${contador} ${pendiente.descripcion} ${'::'.magenta} ${'Pendiente'.red}.`;
 
             });
 

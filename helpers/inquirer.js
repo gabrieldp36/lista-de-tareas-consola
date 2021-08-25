@@ -112,7 +112,7 @@ const listadoTareasBorrar = async (tareas = [] ) => {
 
         return {
             value: `${tarea.id}`,
-            name: (tarea.completadoEn) ? `${index} ${tarea.descripcion} ${'::'.magenta} ${'Completado.'.green}` : `${index} ${tarea.descripcion} ${'::'.magenta} ${'Pendiente.'.red}`,
+            name: (tarea.completadoEn) ? `${index} ${tarea.descripcion} ${'::'.magenta} ${'Completado'.green}.` : `${index} ${tarea.descripcion} ${'::'.magenta} ${'Pendiente'.red}.`,
             checked: false,
         };
         
