@@ -12,7 +12,7 @@ const leerDb = () =>{
 
     if ( ! fs.existsSync(archivo) ) {
 
-        return null;
+        return [];
     };
 
     const info = fs.readFileSync(archivo, {encoding: 'utf-8'});
