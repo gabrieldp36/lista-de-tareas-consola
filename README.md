@@ -11,3 +11,9 @@ Recuerden reconstuir los módulos de Node:
 ```
 npm install
 ```
+
+Y luego, para correr la aplicación, ejecuten en consola el siguiente comando:
+
+```
+node app
+```
